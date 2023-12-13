@@ -1,0 +1,15 @@
+$mobile: 375px;
+$desktop:1400px;
+
+
+@mixin media-maxwidth($screensize) {
+    @media (max-width:$screensize) {
+        @content;
+    }
+}
+
+@mixin media-minwidth($screensize) {
+    @media (min-width:$screensize) {
+        @content;
+    }
+}

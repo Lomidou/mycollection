@@ -1,0 +1,124 @@
+@import 'mixin.scss', 'reset.scss';
+
+$mobile: 375px;
+$desktop:1400px;
+
+
+@mixin media-maxwidth($screensize) {
+    @media (max-width:$screensize) {
+        @content;
+    }
+}
+
+@mixin media-minwidth($screensize) {
+    @media (min-width:$screensize) {
+        @content;
+    }
+}
+
+body {
+    width: 100%;
+    background-color: rgb(243, 234, 219);
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid red;
+    align-items: center;
+
+    .intro{
+        display: flex;
+        flex-direction: column;
+        border: 3px solid black;
+        margin: 25px;
+        padding: 10px;
+        max-height: 200px;
+        overflow: auto;
+
+        h1{
+            font-size: 20px;
+            font-family: 'Fraunces';
+            color: rgb(176, 166, 149);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            text-align: center;
+
+            @include media-minwidth ($desktop){
+                font-size: 44px;
+            }
+        }
+
+        p{
+            font-family: 'Barlow';
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-align: justify;
+            margin: 0.5%;
+
+            @include media-minwidth ($desktop){
+                font-size: 18px;
+            }
+        }
+
+        q{
+            font-family: 'Whisper';
+            font-size: 10px;
+            font-style: italic;
+            text-align: right;
+            margin: 0.5%;
+
+            @include media-minwidth ($desktop){
+                font-size: 16px;
+            }
+        }
+    }
+
+    .img_top10{
+        width: 15%;
+        height: 15%;
+        border-radius: 30%;
+        border: 3px solid green;
+        margin: 25px;
+    }
+
+    @include media-maxwidth ($mobile){
+        display: none;
+    }
+
+}
+
+.box1,
+.box2{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid yellow;
+    margin: 2%;
+    text-align: left;
+
+    @include media-maxwidth ($mobile){
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .card{
+        width: 100%;
+        margin: 0.5%;
+        border: 3px solid black;
+        overflow: auto;
+        border-radius: 20px;
+        background: url("assets/marbre.avif");
+        &__img{
+           width: 100%;
+           height: 50%;
+        }
+
+        @include media-maxwidth ($mobile){
+            width: auto;
+            height: auto;
+            margin:2%;
+        }
+    }
+}
