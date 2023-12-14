@@ -32,17 +32,19 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  border: 3px solid red;
   align-items: center;
 }
 header .intro {
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
+  border: 3px solid white;
   margin: 25px;
   padding: 10px;
   max-height: 200px;
   overflow: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px black;
+  background: url("assets/marbre.avif");
 }
 header .intro h1 {
   font-size: 20px;
@@ -61,6 +63,8 @@ header .intro h1 {
 }
 header .intro p {
   font-family: "Barlow";
+  color: rgb(119, 107, 93);
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 1px;
   text-align: justify;
@@ -80,14 +84,15 @@ header .intro q {
 }
 @media (min-width: 1400px) {
   header .intro q {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 header .img_top10 {
   width: 15%;
   height: 15%;
   border-radius: 30%;
-  border: 3px solid green;
+  border: 3px solid white;
+  box-shadow: 3px 3px 5px black;
   margin: 25px;
 }
 @media (max-width: 375px) {
@@ -100,9 +105,9 @@ header .img_top10 {
 .box2 {
   display: flex;
   flex-direction: row;
-  border: 3px solid yellow;
   margin: 2%;
   text-align: left;
+  position: relative;
 }
 @media (max-width: 375px) {
   .box1,
@@ -115,15 +120,18 @@ header .img_top10 {
 .box2 .card {
   width: 100%;
   margin: 0.5%;
-  border: 3px solid black;
+  border: 2px solid white;
   overflow: auto;
   border-radius: 20px;
+  box-shadow: 2px 2px 5px black;
   background: url("assets/marbre.avif");
+  transition: 1s;
+  cursor: pointer;
 }
 .box1 .card__img,
 .box2 .card__img {
   width: 100%;
-  height: 50%;
+  height: 40%;
 }
 @media (max-width: 375px) {
   .box1 .card,
@@ -132,4 +140,44 @@ header .img_top10 {
     height: auto;
     margin: 2%;
   }
+}
+.box1 .card__name, .box1 .card__birthday, .box1 .card__club, .box1 .card__selection, .box1 .card__position, .box1 .card__stat,
+.box2 .card__name,
+.box2 .card__birthday,
+.box2 .card__club,
+.box2 .card__selection,
+.box2 .card__position,
+.box2 .card__stat {
+  font-size: 12px;
+  color: rgb(119, 107, 93);
+  font-family: "Barlow";
+  font-weight: 600;
+  margin: 7%;
+}
+.box1 .card__video-icon,
+.box2 .card__video-icon {
+  width: 30px;
+  height: auto;
+  margin: 7%;
+  align-self: center;
+  filter: invert(48%) sepia(2%) saturate(3375%) hue-rotate(352deg) brightness(84%) contrast(77%);
+  transition: 0.1s;
+}
+.box1 .card__delete-button,
+.box2 .card__delete-button {
+  position: absolute;
+  border-radius: 50%;
+  margin: 0.5%;
+  color: rgb(243, 238, 234);
+  background-color: rgb(176, 166, 149);
+  border: 1px solid rgb(235, 227, 213);
+  box-shadow: 1px 1px 1px white;
+}
+.box1 .card :hover.card__video-icon,
+.box2 .card :hover.card__video-icon {
+  filter: invert(17%) sepia(99%) saturate(2654%) hue-rotate(348deg) brightness(80%) contrast(106%);
+}
+.box1 :hover.card,
+.box2 :hover.card {
+  transform: scale(0.95);
 }/*# sourceMappingURL=style.css.map */
