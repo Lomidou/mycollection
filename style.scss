@@ -1,7 +1,6 @@
 @import 'mixin.scss', 'reset.scss';
 
-$mobile: 375px;
-$medium:601px - 1400px;
+$mobile: 500px;
 $desktop:1400px;
 
 
@@ -137,17 +136,22 @@ header{
         &__selection,
         &__position,
         &__stat{
-            font-size: 12px;
+            font-size: 14px;
             color: rgb(119, 107, 93);
             font-family: 'Barlow';
             font-weight: 600;
-            margin: 7%;
+            margin: 5%;
+        }
+
+        &__video-link{
+            display: flex;
+            justify-content: center;
         }
 
         &__video-icon{
             width: 30px;
             height: auto;
-            margin: 7%;
+            margin: 5%;
             align-self: center;
             filter: invert(48%) sepia(2%) saturate(3375%) hue-rotate(352deg) brightness(84%) contrast(77%);
             transition: 0.1s;
@@ -161,6 +165,7 @@ header{
             background-color: rgb(176, 166, 149);
             border: 1px solid rgb(235, 227, 213);
             box-shadow: 1px 1px 1px white;
+            cursor: pointer;
         }
 
         :hover.card__video-icon{

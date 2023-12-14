@@ -95,7 +95,7 @@ header .img_top10 {
   box-shadow: 3px 3px 5px black;
   margin: 25px;
 }
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   header {
     display: none;
   }
@@ -109,7 +109,7 @@ header .img_top10 {
   text-align: left;
   position: relative;
 }
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .box1,
   .box2 {
     flex-direction: column;
@@ -133,7 +133,7 @@ header .img_top10 {
   width: 100%;
   height: 40%;
 }
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .box1 .card,
   .box2 .card {
     width: auto;
@@ -148,17 +148,22 @@ header .img_top10 {
 .box2 .card__selection,
 .box2 .card__position,
 .box2 .card__stat {
-  font-size: 12px;
+  font-size: 14px;
   color: rgb(119, 107, 93);
   font-family: "Barlow";
   font-weight: 600;
-  margin: 7%;
+  margin: 5%;
+}
+.box1 .card__video-link,
+.box2 .card__video-link {
+  display: flex;
+  justify-content: center;
 }
 .box1 .card__video-icon,
 .box2 .card__video-icon {
   width: 30px;
   height: auto;
-  margin: 7%;
+  margin: 5%;
   align-self: center;
   filter: invert(48%) sepia(2%) saturate(3375%) hue-rotate(352deg) brightness(84%) contrast(77%);
   transition: 0.1s;
@@ -172,6 +177,7 @@ header .img_top10 {
   background-color: rgb(176, 166, 149);
   border: 1px solid rgb(235, 227, 213);
   box-shadow: 1px 1px 1px white;
+  cursor: pointer;
 }
 .box1 .card :hover.card__video-icon,
 .box2 .card :hover.card__video-icon {
